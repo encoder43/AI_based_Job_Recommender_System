@@ -1,100 +1,100 @@
-AI-Powered Job Recommender System
-## Overview
+# AI-Powered Job Recommender System
 
+## 📖 Overview
 An intelligent job recommender system leveraging Large Language Models (LLMs) to analyze resumes, identify skill gaps, suggest career roadmaps, and fetch tailored job openings from multiple online portals.
 
-![Screenshot](screenshot.png)  
+![Screenshot](image.png)  
 *A screenshot of the application's main interface, showing resume analysis and job results.*
 
 ---
 
 ## 📄 Table of Contents
-
-- [Introduction](#introduction)
-- [Features](#features)
-- [Tech Stack & Architecture](#tech-stack--architecture)
-- [Technology Used](#technology-used)
-- [System Architecture](#system-architecture)
-- [Setup and Installation](#setup-and-installation)
-    - [Prerequisites](#prerequisites)
-    - [Backend Setup](#backend-setup)
-    - [Frontend Setup](#frontend-setup)
-    - [Running the Application](#running-the-application)
-- [API Endpoints](#api-endpoints)
-- [Environment Variables](#environment-variables)
-- [Project Structure](#project-structure)
-- [Future Improvements](#future-improvements)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+- [Introduction](#-introduction)
+- [Features](#-features)
+- [Tech Stack & Architecture](#%EF%B8%8F-tech-stack--architecture)
+  - [Technology Used](#technology-used)
+- [System Architecture](#-system-architecture)
+- [Setup and Installation](#-setup-and-installation)
+  - [Prerequisites](#prerequisites)
+  - [Backend Setup](#backend-setup)
+  - [Frontend Setup](#frontend-setup)
+  - [Running the Application](#️-running-the-application)
+- [API Endpoints](#-api-endpoints)
+- [Environment Variables](#-environment-variables)
+- [Project Structure](#-project-structure)
+- [Future Improvements](#-future-improvements)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Contact](#-contact)
 
 ---
 
 ## 🌟 Introduction
+This project transforms the job search process into a streamlined, personalized experience. By uploading a PDF resume, users receive an AI-powered analysis including:
+- A professional summary  
+- Identified skill gaps  
+- A strategic career roadmap  
 
-This project transforms the job search process into a streamlined, personalized experience. By uploading a PDF resume, users receive an AI-powered analysis including a professional summary, identified skill gaps, and a strategic career roadmap. The system automatically queries multiple job portals (Indeed, Google Jobs, Glassdoor, Naukri) and presents relevant opportunities in a modern web interface.
+The system automatically queries multiple job portals (Indeed, Google Jobs, Glassdoor, Naukri) and presents relevant opportunities in a modern web interface.
 
-Originally built with Streamlit, the application now features a scalable, decoupled architecture with a Python/FastAPI backend and a vanilla HTML, CSS, and JavaScript frontend.
+Originally built with **Streamlit**, the application now features a scalable, decoupled architecture with a **Python/FastAPI backend** and a **vanilla HTML, CSS, and JavaScript frontend**.
 
 ---
 
 ## ✨ Features
-
-- **📄 PDF Resume Upload:** Simple, intuitive interface for uploading resumes in PDF format.
-- **🤖 AI-Powered Analysis:** Utilizes the Groq LLM API for high-speed text analysis to:
-    - Generate a concise, professional summary.
-    - Identify critical skill gaps and missing qualifications.
-    - Create a personalized career development roadmap.
-- **🔍 Multi-Source Job Scraping:** Fetches job listings concurrently from multiple platforms using Apify actors:
-    - Indeed
-    - Google Jobs
-    - Glassdoor
-    - Naukri (India)
-- **✨ Modern & Responsive UI:** Clean, user-friendly interface built with Bootstrap 5, compatible with all devices.
-- **🔗 Decoupled Architecture:** Independent frontend and backend for maintainability, scalability, and deployment flexibility.
+- **📄 PDF Resume Upload** – Simple, intuitive interface for uploading resumes in PDF format.  
+- **🤖 AI-Powered Analysis** – Utilizes the **Groq LLM API** for high-speed text analysis:  
+  - Generate a concise, professional summary  
+  - Identify critical skill gaps and missing qualifications  
+  - Create a personalized career development roadmap  
+- **🔍 Multi-Source Job Scraping** – Fetches job listings concurrently from multiple platforms using **Apify actors**:  
+  - Indeed  
+  - Google Jobs  
+  - Glassdoor  
+  - Naukri (India)  
+- **✨ Modern & Responsive UI** – Built with **Bootstrap 5**, ensuring mobile-first compatibility.  
+- **🔗 Decoupled Architecture** – Independent frontend and backend for scalability and deployment flexibility.  
 
 ---
 
 ## 🛠️ Tech Stack & Architecture
 
 ### Technology Used
-
 **Backend:**
-- Python: Core programming language
-- FastAPI: High-performance ASGI framework for APIs
-- Groq: LLM provider for fast, free AI-powered text generation
-- Apify Client: Interacts with web scraping actors
-- PyMuPDF (fitz): Efficient PDF text extraction
-- Uvicorn: ASGI server for FastAPI
+- Python  
+- FastAPI (high-performance ASGI framework)  
+- Groq (LLM provider for free AI-powered text generation)  
+- Apify Client (interact with web scraping actors)  
+- PyMuPDF (fitz) – for PDF text extraction  
+- Uvicorn – ASGI server  
 
 **Frontend:**
-- HTML5: Markup language
-- CSS3: Custom styling
-- Bootstrap 5: Responsive design and UI components
-- JavaScript (ES6): API calls, DOM manipulation, interactivity
-- marked.js: Parses Markdown responses from LLM into styled HTML
+- HTML5  
+- CSS3  
+- Bootstrap 5 (UI components, responsive design)  
+- JavaScript (ES6 for interactivity & API calls)  
+- marked.js (parses Markdown to styled HTML)  
 
 ---
 
 ## 🏗️ System Architecture
-
-The application follows a client-server model. The frontend is a static web app communicating with the backend via REST API. The backend handles PDF processing, Groq LLM interaction, and Apify web scrapers orchestration.
+The application follows a client-server model. The frontend communicates with the backend via REST API. The backend handles **PDF processing, Groq LLM interaction, and Apify scrapers orchestration**.
 
 ```mermaid
 graph TD
-        A[User's Browser (Frontend)] -->|1. Uploads PDF| B(FastAPI Backend)
-        B -->|2. Sends Resume Text| C{Groq LLM API}
-        C -->|3. Returns Analysis (Summary, Gaps, Roadmap)| B
-        A -->|4. Clicks 'Find Jobs' with Keywords| B
-        B -->|5. Sends Keywords to Scrapers| D(Apify Cloud)
-        subgraph D [Apify Cloud]
-                D1[Indeed Actor]
-                D2[Google Jobs Actor]
-                D3[Glassdoor Actor]
-                D4[Naukri Actor]
-        end
-        D -->|6. Returns Job Listings| B
-        B -->|7. Sends Final JSON Response to Client| A
+    A[User's Browser (Frontend)] -->|1. Uploads PDF| B(FastAPI Backend)
+    B -->|2. Sends Resume Text| C{Groq LLM API}
+    C -->|3. Returns Analysis| B
+    A -->|4. Clicks 'Find Jobs'| B
+    B -->|5. Sends Keywords| D(Apify Cloud)
+    subgraph D [Apify Cloud]
+        D1[Indeed Actor]
+        D2[Google Jobs Actor]
+        D3[Glassdoor Actor]
+        D4[Naukri Actor]
+    end
+    D -->|6. Returns Job Listings| B
+    B -->|7. Sends Final JSON Response| A
 ```
 
 ---
