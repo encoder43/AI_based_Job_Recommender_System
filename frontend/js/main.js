@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // State & Config
     let analysisData = {}; 
-    const API_BASE_URL = 'http://127.0.0.1:8000';
+    const API_BASE_URL = 'https://ai-job-recommender-api.onrender.com';
 
     // --- Helper function to show errors ---
     const showError = (message) => {
