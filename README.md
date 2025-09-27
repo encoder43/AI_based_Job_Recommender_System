@@ -4,21 +4,21 @@
 An intelligent job recommender system leveraging Large Language Models (LLMs) to analyze resumes, identify skill gaps, suggest career roadmaps, and fetch tailored job openings from multiple online portals.
 
 ![Screenshot](image.png)  
-*A screenshot of the application's main interface, showing resume analysis and job results.*
+*A screenshot of the application's main interface, displaying the resume analysis (professional summary, skill gaps, career roadmap).*
 
 ---
 
 ## 📄 Table of Contents
 - [Introduction](#-introduction)
 - [Features](#-features)
-- [Tech Stack & Architecture](#%EF%B8%8F-tech-stack--architecture)
+- [Tech Stack & Architecture](#-tech-stack--architecture)
   - [Technology Used](#technology-used)
 - [System Architecture](#-system-architecture)
 - [Setup and Installation](#-setup-and-installation)
   - [Prerequisites](#prerequisites)
   - [Backend Setup](#backend-setup)
   - [Frontend Setup](#frontend-setup)
-  - [Running the Application](#️-running-the-application)
+  - [Running the Application](#-running-the-application)
 - [API Endpoints](#-api-endpoints)
 - [Environment Variables](#-environment-variables)
 - [Project Structure](#-project-structure)
@@ -37,7 +37,7 @@ This project transforms the job search process into a streamlined, personalized 
 
 The system automatically queries multiple job portals (Indeed, Google Jobs, Glassdoor, Naukri) and presents relevant opportunities in a modern web interface.
 
-I have built it with **Streamlit**and for deployment and scalibility purpose i have used **Python/FastAPI backend** and a **vanilla HTML, CSS, and JavaScript frontend**.
+I have built it with **Streamlit** and for deployment and scalability purposes I have used a **Python/FastAPI backend** and a **vanilla HTML, CSS, and JavaScript frontend**.
 
 ---
 
@@ -203,17 +203,17 @@ AI_based_Job_Recommender_System/
 ├── backend/
 │   ├── src/
 │   │   ├── __init__.py
-│   │   ├── helper.py        # PDF extraction & Groq LLM calls
-│   │   └── job_api.py       # Apify actor (scraper) logic
+│   │   ├── helper.py            # PDF extraction & Groq LLM calls
+│   │   └── job_api.py           # Apify actor (scraper) logic
 │   ├── main.py              # FastAPI server and API endpoints
 │   ├── requirements.txt
 │   └── .env                 # API keys (not in git)
 └── frontend/
         ├── css/
-        │   └── style.css        # Custom styles
+        │   └── style.css            # Custom styles
         ├── js/
-        │   └── main.js          # Client-side logic, API calls
-        └── index.html           # Main page structure
+        │   └── main.js              # Client-side logic, API calls
+        └── index.html               # Main page structure
 ```
 
 ---
