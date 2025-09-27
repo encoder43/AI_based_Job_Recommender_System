@@ -1,0 +1,12 @@
+streamlit
+openai 
+pymupdf 
+python-dotenv
+apify-client
+fastapi
+uvicorn[standard]
+python-dotenv
+groq
+pymupdf
+apify-client
+python-multipart
