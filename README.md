@@ -37,7 +37,7 @@ This project transforms the job search process into a streamlined, personalized 
 
 The system automatically queries multiple job portals (Indeed, Google Jobs, Glassdoor, Naukri) and presents relevant opportunities in a modern web interface.
 
-Originally built with **Streamlit**, the application now features a scalable, decoupled architecture with a **Python/FastAPI backend** and a **vanilla HTML, CSS, and JavaScript frontend**.
+I have built it with **Streamlit**and for deployment and scalibility purpose i have used **Python/FastAPI backend** and a **vanilla HTML, CSS, and JavaScript frontend**.
 
 ---
 
@@ -80,22 +80,23 @@ Originally built with **Streamlit**, the application now features a scalable, de
 ## 🏗️ System Architecture
 The application follows a client-server model. The frontend communicates with the backend via REST API. The backend handles **PDF processing, Groq LLM interaction, and Apify scrapers orchestration**.
 
-```mermaid
-graph TD
-    A[User's Browser (Frontend)] -->|1. Uploads PDF| B(FastAPI Backend)
-    B -->|2. Sends Resume Text| C{Groq LLM API}
-    C -->|3. Returns Analysis| B
-    A -->|4. Clicks 'Find Jobs'| B
-    B -->|5. Sends Keywords| D(Apify Cloud)
+flowchart TD
+    A[User's Browser (Frontend)] --> B[FastAPI Backend]
+    B -->|Send Resume Text| C{Groq LLM API}
+    C -->|Return Analysis (Summary, Gaps, Roadmap)| B
+    A -->|Click 'Find Jobs'| B
+    B -->|Send Keywords| D[Apify Cloud]
+
     subgraph D [Apify Cloud]
         D1[Indeed Actor]
         D2[Google Jobs Actor]
         D3[Glassdoor Actor]
         D4[Naukri Actor]
     end
-    D -->|6. Returns Job Listings| B
-    B -->|7. Sends Final JSON Response| A
-```
+
+    D -->|Return Job Listings| B
+    B -->|Send Final JSON Response| A
+
 
 ---
 
