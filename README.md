@@ -245,4 +245,5 @@ Distributed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 - **encoder43** - [GitHub Profile](https://github.com/encoder43)
 - **Project Link:** [AI_based_Job_Recommender_System](https://github.com/encoder43/AI_based_Job_Recommender_System)
+- **Public Link** [you can try](https://ai-job-recommender-aueo.onrender.com/)
 
