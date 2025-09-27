@@ -79,8 +79,9 @@ I have built it with **Streamlit**and for deployment and scalibility purpose i h
 
 ## 🏗️ System Architecture
 
-The application follows a **client-server model**.  
-- The **frontend** is a static web app that communicates with the **backend** via REST API.  
+The application follows a **client-server model**:
+
+- The **frontend** is a static web app that communicates with the backend via REST API.  
 - The **backend** handles:
   - PDF processing  
   - Groq LLM interaction  
@@ -88,22 +89,22 @@ The application follows a **client-server model**.
 
 ```mermaid
 flowchart TD
-    A[Frontend: User's Browser] -->|Uploads Resume| B[Backend: FastAPI]
-    B -->|Extract Text & Send| C{Groq LLM API}
-    C -->|Analysis (Summary, Gaps, Roadmap)| B
-    A -->|Click 'Find Jobs'| B
+    A[Frontend: User's Browser] -->|Upload Resume| B[Backend: FastAPI]
+    B -->|Send Text| C[Groq LLM API]
+    C -->|Return Analysis| B
+    A -->|Request Jobs| B
     B -->|Send Keywords| D[Apify Cloud]
 
     subgraph D [Apify Cloud Scrapers]
-        D1[Indeed Actor]
-        D2[Google Jobs Actor]
-        D3[Glassdoor Actor]
-        D4[Naukri Actor]
+        D1[Indeed]
+        D2[Google Jobs]
+        D3[Glassdoor]
+        D4[Naukri]
     end
 
     D -->|Job Listings| B
-    B -->|JSON Response| A
-
+    B -->|Send Results (JSON)| A
+---
 ## 🚀 Setup and Installation
 
 Follow these steps to run the project locally.
