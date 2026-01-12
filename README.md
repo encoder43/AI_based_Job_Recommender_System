@@ -1,6 +1,6 @@
 # AI-Powered Job Recommender System
 
-## 📖 Overview
+## Overview
 An intelligent job recommender system leveraging Large Language Models (LLMs) to analyze resumes, identify skill gaps, suggest career roadmaps, and fetch tailored job openings from multiple online portals.
 
 ![Screenshot](image.png)  
@@ -8,7 +8,7 @@ An intelligent job recommender system leveraging Large Language Models (LLMs) to
 
 ---
 
-## 📄 Table of Contents
+## Table of Contents
 - [Introduction](#-introduction)
 - [Features](#-features)
 - [Tech Stack & Architecture](#%EF%B8%8F-tech-stack--architecture)
@@ -29,7 +29,7 @@ An intelligent job recommender system leveraging Large Language Models (LLMs) to
 
 ---
 
-## 🌟 Introduction
+## Introduction
 This project transforms the job search process into a streamlined, personalized experience. By uploading a PDF resume, users receive an AI-powered analysis including:
 - A professional summary  
 - Identified skill gaps  
@@ -41,23 +41,23 @@ I have built it with **Streamlit**and for deployment and scalibility purpose i h
 
 ---
 
-## ✨ Features
-- **📄 PDF Resume Upload** – Simple, intuitive interface for uploading resumes in PDF format.  
-- **🤖 AI-Powered Analysis** – Utilizes the **Groq LLM API** for high-speed text analysis:  
+## Features
+- **PDF Resume Upload** – Simple, intuitive interface for uploading resumes in PDF format.  
+- **AI-Powered Analysis** – Utilizes the **Groq LLM API** for high-speed text analysis:  
   - Generate a concise, professional summary  
   - Identify critical skill gaps and missing qualifications  
   - Create a personalized career development roadmap  
-- **🔍 Multi-Source Job Scraping** – Fetches job listings concurrently from multiple platforms using **Apify actors**:  
+- **Multi-Source Job Scraping** – Fetches job listings concurrently from multiple platforms using **Apify actors**:  
   - Indeed  
   - Google Jobs  
   - Glassdoor  
   - Naukri (India)  
-- **✨ Modern & Responsive UI** – Built with **Bootstrap 5**, ensuring mobile-first compatibility.  
-- **🔗 Decoupled Architecture** – Independent frontend and backend for scalability and deployment flexibility.  
+- **Modern & Responsive UI** – Built with **Bootstrap 5**, ensuring mobile-first compatibility.  
+- **Decoupled Architecture** – Independent frontend and backend for scalability and deployment flexibility.  
 
 ---
 
-## 🛠️ Tech Stack & Architecture
+## Tech Stack & Architecture
 
 ### Technology Used
 **Backend:**
@@ -77,7 +77,7 @@ I have built it with **Streamlit**and for deployment and scalibility purpose i h
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 The application follows a client-server model. The frontend communicates with the backend via REST API. The backend handles **PDF processing, Groq LLM interaction, and Apify scrapers orchestration**.
 
 flowchart TD
@@ -100,7 +100,7 @@ flowchart TD
 
 ---
 
-## 🚀 Setup and Installation
+## Setup and Installation
 
 Follow these steps to run the project locally.
 
@@ -153,7 +153,7 @@ The frontend is a static site. Use a simple HTTP server to run it.
 
 ---
 
-## ▶️ Running the Application
+## Running the Application
 
 **Start Backend Server:**
 ```bash
@@ -170,7 +170,7 @@ Frontend: [http://127.0.0.1:8001](http://127.0.0.1:8001)
 
 ---
 
-## 📡 API Endpoints
+## API Endpoints
 
 | Endpoint            | Method | Body (JSON)                | Description                                                                 |
 |---------------------|--------|----------------------------|-----------------------------------------------------------------------------|
@@ -180,7 +180,7 @@ Frontend: [http://127.0.0.1:8001](http://127.0.0.1:8001)
 
 ---
 
-## 🔑 Environment Variables
+##  Environment Variables
 
 Add these to your `.env` file in the backend directory:
 
@@ -191,7 +191,7 @@ Add these to your `.env` file in the backend directory:
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 AI_based_Job_Recommender_System/
@@ -213,7 +213,7 @@ AI_based_Job_Recommender_System/
 
 ---
 
-## 📈 Future Improvements
+##  Future Improvements
 
 - **User Authentication:** Save resume analysis history and favorite jobs.
 - **Database Integration:** Store results in a database (PostgreSQL, MongoDB).
@@ -223,7 +223,7 @@ AI_based_Job_Recommender_System/
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome! To contribute:
 
@@ -235,7 +235,7 @@ Contributions are welcome! To contribute:
 
 ---
 
-## 📜 License
+##  License
 
 Distributed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
